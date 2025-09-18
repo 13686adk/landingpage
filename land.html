@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate360 - Smart Estate Management Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #4a90c2;
+            --dark-blue: #2c5aa0;
+            --light-blue: #6bb6d6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Custom Bootstrap overrides */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(32, 31, 31, 0.4)), url('assets/img/Mask Group.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+        .navbar-custom {
+            background: rgba(0, 0, 0, 0.3) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .btn-get-started {
+            background: var(--primary-blue);
+            border: none;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 24px;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .seamless-outline {
+            position: relative;
+            display: inline-block;
+            font-size: 3rem;
+            /* adjust for your design */
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+
+        /* White oval drawn stroke behind text */
+        .seamless-outline::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            right: -20px;
+            bottom: -10px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100'%3E%3Cellipse cx='200' cy='50' rx='180' ry='40' fill='none' stroke='white' stroke-width='8'/%3E%3C/svg%3E") center/contain no-repeat;
+            z-index: -1;
+            opacity: 1;
+            /* adjust 0.5–1 for fade effect */
+        }
+
+
+        .seamless-outline {
+            border: 3px solid white;
+            border-radius: 40px;
+            padding: 8px 32px;
+            display: inline-block;
+            color: white;
+            font-size: 4rem;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+        }
+
+        .phone-mockup {
+            max-width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h5 {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .family-illustration {
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .family-illustration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(74, 144, 194, 0.8), rgba(44, 90, 160, 0.8));
+        }
+
+        .family-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .product-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            height: 320px;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .product-card h5 {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .product-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-features li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .product-features li::before {
+            content: "●";
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+        }
+
+        .estate-card {
+            height: 280px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .estate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        }
+
+        .estate-name {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(74, 144, 194, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .mission-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)), url('assets/images/mission-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: white;
+        }
+
+        .road-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .road-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .road-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .feature-card:hover {
+            /* cancel any hover effect */
+            background-color: inherit !important;
+            box-shadow: none !important;
+            transform: none !important;
+            cursor: default !important;
+        }
+
+
+        .support-person {
+            border-radius: 16px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .devices-mockup {
+            border-radius: 16px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-card {
+            width: 300px;
+            background-color: #f8f9fa;
+            /* light ash */
+            border: none;
+            /* remove border */
+            box-shadow: none;
+            /* remove shadow */
+            overflow: hidden;
+            /* clip icon */
+        }
+
+        .product-card:hover {
+            transform: none;
+            /* disable hover transform */
+            box-shadow: none;
+            /* no shadow on hover */
+        }
+
+        .product-card .card-body {
+            position: relative;
+            padding: 1.5rem;
+        }
+
+        /* faded icon in bottom-right corner */
+        .product-card .card-icon {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            font-size: 140px;
+            color: rgba(0, 0, 0, 0.05);
+            /* faded watermark */
+            pointer-events: none;
+        }
+
+
+        .devices-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+        }
+
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 1.25rem;
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-title,
+            .seamless-outline {
+                font-size: 2.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #e9ecef;
+            padding: 20px 30px;
+        }
+
+        .modal-title {
+            color: #4a90c2;
+            font-weight: 600;
+        }
+
+        .btn-close {
+            font-size: 1.2rem;
+        }
+
+        .modal-body {
+            padding: 0;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        /* Product Sections */
+        .product-section {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-section:nth-child(odd) {
+            background: linear-gradient(135deg, #2c5aa0, #4a90c2);
+            color: white;
+        }
+
+        .product-section:nth-child(even) {
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .product-section:nth-child(even) .product-title {
+            color: #2c5aa0;
+        }
+
+        .product-bg-image {
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.1;
+            font-size: 200px;
+            z-index: 1;
+        }
+
+        .product-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .product-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .device-mockup {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+        }
+
+        .phone-mockup {
+            width: 200px;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .laptop-mockup {
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-store-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .app-store-btn {
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .app-store-btn:hover {
+            background: #333;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .app-store-btn i {
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            background: white;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .contact-btn {
+            background: #4a90c2;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #2c5aa0;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-section {
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .device-mockup {
+                position: static;
+                transform: none;
+                margin-top: 30px;
+                text-align: center;
+            }
+
+            .phone-mockup,
+            .laptop-mockup {
+                width: 150px;
+                height: auto;
+                aspect-ratio: 1/2;
+            }
+
+            .laptop-mockup {
+                aspect-ratio: 3/2;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+
+            .modal-body {
+                max-height: 70vh;
+            }
+        }
+
+        /* Modal Configuration */
+        .modal-dialog {
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .modal-content {
+            border: none;
+            border-radius: 15px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #dee2e6;
+            padding: 20px;
+            flex-shrink: 0;
+        }
+
+        .modal-body {
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            flex-grow: 1;
+            max-height: calc(90vh - 80px);
+        }
+
+        /* Scrollbar Styling */
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Estate Section Styles */
+        .estate-section {
+            padding: 40px 30px;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 350px;
+        }
+
+        .estate-section.blue {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+        }
+
+        .estate-section.white {
+            background: #f8f9fa;
+            color: #333;
+            border-top: 1px solid #e9ecef;
+        }
+
+        /* Content Layout */
+        .estate-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            max-width: 100%;
+        }
+
+        .estate-image {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .estate-image.left {
+            order: 1;
+            margin-right: 20px;
+        }
+
+        .estate-image.right {
+            order: 3;
+            margin-left: 20px;
+        }
+
+        .estate-text {
+            order: 2;
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 400px;
+        }
+
+        /* Typography */
+        .estate-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .estate-subtitle {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .estate-description {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        /* Buttons */
+        .download-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .download-btn {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: rgba(0, 0, 0, 1);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        .contact-btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #218838;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Image Styles */
+        .estate-image img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .estate-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Close Button */
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            color: #333;
+            transition: opacity 0.3s ease;
+        }
+
+        .close-btn:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .modal-dialog {
+                max-width: 95%;
+                margin: 10px auto;
+            }
+
+            .estate-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .estate-image {
+                margin: 10px 0;
+                order: unset !important;
+            }
+
+            .estate-text {
+                order: unset !important;
+                padding: 20px 0;
+                max-width: 100%;
+            }
+
+            .estate-title {
+                font-size: 1.8rem;
+            }
+
+            .download-buttons {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Smooth Scrolling */
+        .modal-body {
+            scroll-behavior: smooth;
+        }
+
+        /* Background decorations */
+        .construction-bg {
+            position: absolute;
+            right: -50px;
+            bottom: -50px;
+            width: 200px;
+            height: 150px;
+            opacity: 0.1;
+        }
+
+        .calendar-container {
+            width: 360px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .calendar-days,
+        .calendar-dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+
+        .calendar-days div {
+            font-weight: bold;
+            padding: 6px 0;
+        }
+
+        .calendar-dates div {
+            padding: 8px;
+            margin: 2px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .calendar-dates div.inactive {
+            color: #ccc;
+            cursor: default;
+        }
+
+        .calendar-dates div.active {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .calendar-dates div.demo-day {
+            background: #d9e8ff;
+        }
+
+        .calendar-dates div:hover:not(.inactive):not(.active) {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/Logo.png" alt="State360 Logo" class="d-inline-block align-text-top"
+                    style="height: 70px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-search text-white me-3"></i>
+                    <button class="btn btn-get-started">Let's Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Screen 1 -->
+    <section id="home" class="hero-bg d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="mb-0">
+                        <small class="text-uppercase text-white-50">Estate 360</small>
+                    </div>
+
+                    <h1 class="hero-title mb-2 text-white">Smart. Secure.</h1>
+
+                    <!-- Seamless text with stroke -->
+                    <div class="seamless-outline mb-2">Seamless.</div>
+
+                    <p class="hero-description mb-2 p-3 rounded"
+                        style="background-color: rgba(0,123,255,0.08); color:white;">
+                        The all-in-one platform powering the future of estates from digital access to verified home
+                        listings.
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex justify-content-center mt-4 mb-5">
+                        <div class="action-buttons d-flex flex-column flex-md-row">
+
+                            <!-- Explore the Suite -->
+                            <button class="action-btn btn btn-primary flex-fill py-3 px-4 m-2" data-bs-toggle="modal"
+                                data-bs-target="#exploreSuiteModal">
+                                <i class="fas fa-compass d-block mb-2 fs-4"></i>
+                                Explore the Suite
+                            </button>
+
+                            <!-- Request a Demo -->
+                            <button class="action-btn btn btn-primary flex-fill py-3 px-4 m-2" data-bs-toggle="modal"
+                                data-bs-target="#requestDemoModal">
+                                <i class="fas fa-file-alt d-block mb-2 fs-4"></i>
+                                Request a Demo
+                            </button>
+
+                            <!-- Watch 360s Overview -->
+                            <button class="action-btn btn btn-primary flex-fill py-3 px-4 m-2">
+                                <i class="fas fa-play d-block mb-2 fs-4"></i>
+                                Watch 360s Overview
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Explore Suite Modal -->
+                    <div class="modal fade" id="exploreSuiteModal" tabindex="-1"
+                        aria-labelledby="exploreSuiteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <div class="w-100 text-center">
+                                        <h2 class="fw-bold mb-0">Expore Suite</h2>
+                                        <h5 class="text-muted">Estate360</h5>
+                                    </div>
+                                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <!-- Modal Body with Scrollable Content -->
+                                <div class="modal-body">
+                                    <!-- Estate 360 Community Section -->
+                                    <div class="estate-section blue">
+                                        <div class="estate-content">
+                                            <div class="estate-image left">
+                                                <a href="#" style="display: inline-block; text-decoration: none;">
+                                                    <img src="assets/img/222.png" alt="Community App Interface" style="width: 120px; height: 250px; border-radius: 25px; 
+                            object-fit: cover;">
+                                                </a>
+                                            </div>
+
+                                            <div class="estate-text">
+                                                <h2 class="estate-title">Estate 360</h2>
+                                                <h3 class="estate-subtitle">Community</h3>
+                                                <p class="estate-description">
+                                                    Connecting residents and fostering community engagement through
+                                                    digital innovation.
+                                                    Experience seamless communication, event management, and
+                                                    neighborhood connectivity
+                                                    all in one comprehensive platform designed for modern communities.
+                                                </p>
+                                                <div class="download-buttons">
+                                                    <a href="#" class="download-btn">
+                                                        <i class="fab fa-apple"></i>
+                                                        App Store
+                                                    </a>
+                                                    <a href="#" class="download-btn">
+                                                        <i class="fab fa-google-play"></i>
+                                                        Play Store
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="estate-image right">
+                                                <a href="#" style="display: inline-block; text-decoration: none;">
+                                                    <img src="assets/img/Mask group.png" alt="Community Features" style="width: 120px; height: 250px; border-radius: 25px; 
+                            object-fit: cover; ">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Estate 360 Developer Section -->
+                                    <div class="estate-section white">
+                                        <div class="construction-bg"></div>
+                                        <div class="estate-content">
+                                            <div class="estate-image left">
+                                                <a href="#" style="display: inline-block; text-decoration: none;">
+                                                    <img src="assets/img/iPhone 15 Pro.png" alt="Developer Tools" style="width: 150px; height: 200px; border-radius: 15px; 
+                            object-fit: cover;">
+                                                </a>
+                                            </div>
+
+                                            <div class="estate-text">
+                                                <h2 class="estate-title" style="color: #333;">Estate 360</h2>
+                                                <h3 class="estate-subtitle" style="color: #666;">Developer</h3>
+                                                <p class="estate-description" style="color: #555;">
+                                                    Streamline your development projects with comprehensive project
+                                                    management tools.
+                                                    From planning to completion, track progress, manage resources, and
+                                                    coordinate teams
+                                                    efficiently with our developer-focused platform.
+                                                </p>
+                                                <div class="download-buttons">
+                                                    <a href="#" class="download-btn">
+                                                        <i class="fab fa-apple"></i>
+                                                        App Store
+                                                    </a>
+                                                    <a href="#" class="download-btn">
+                                                        <i class="fab fa-google-play"></i>
+                                                        Play Store
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="estate-image right">
+                                                <a href="#" style="display: inline-block; text-decoration: none;">
+                                                    <img src="assets/img/construction-silhouette-removebg-preview 1.png"
+                                                        alt="Construction Management" style="width: 150px; height: 200px; border-radius: 15px; 
+                            object-fit: cover;">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Estate 360 Organization Section -->
+                                    <div class="estate-section blue">
+                                        <div class="estate-content">
+                                            <div class="estate-image left">
+                                                <a href="#" style="display: inline-block; text-decoration: none;">
+                                                    <img src="assets/img/modern-building-bucharest-romania-removebg-preview 1.png"
+                                                        alt="Modern Building" style="width: 120px; height: 250px; border-radius: 15px; 
+                            object-fit: cover;">
+                                                </a>
+                                            </div>
+
+                                            <div class="estate-text">
+                                                <h2 class="estate-title">Estate 360</h2>
+                                                <h3 class="estate-subtitle">Organization</h3>
+                                                <p class="estate-description">
+                                                    Optimize organizational workflows and enhance productivity with
+                                                    integrated management solutions.
+                                                    Designed for property management companies and real estate
+                                                    organizations to streamline
+                                                    operations and improve client relationships.
+                                                </p>
+                                                <button class="contact-btn btn btn-primary">
+                                                    <i class="fas fa-phone me-2"></i>
+                                                    Contact Support
+                                                </button>
+                                            </div>
+
+                                            <div class="estate-image right">
+                                                <a href="#" style="display: inline-block; text-decoration: none;">
+                                                    <img src="assets/img/MacBook Air (15 inch).png"
+                                                        alt="Organization Dashboard" style="width: 250px; height: 180px; border-radius: 15px; 
+                         object-fit: cover;">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Estate 360 Homes Section -->
+                                    <div class="estate-section white">
+                                        <div class="estate-content">
+                                            <div class="estate-image left">
+
+                                            </div>
+
+                                            <div class="estate-text">
+                                                <h2 class="estate-title" style="color: #333;">Estate 360</h2>
+                                                <h3 class="estate-subtitle" style="color: #666;">Homes</h3>
+                                                <p class="estate-description" style="color: #555;">
+                                                    Discover your dream home with our comprehensive property search and
+                                                    management platform.
+                                                    Browse listings, schedule viewings, and manage your property
+                                                    portfolio with advanced
+                                                    filtering and matching capabilities.
+                                                </p>
+                                                <div class="download-buttons">
+                                                    <a href="#" class="download-btn">
+                                                        <i class="fab fa-apple"></i>
+                                                        App Store
+                                                    </a>
+                                                    <a href="#" class="download-btn">
+                                                        <i class="fab fa-google-play"></i>
+                                                        Play Store
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="estate-image right">
+                                                <a href="#" style="display: inline-block; text-decoration: none;">
+                                                    <img src="assets/img/222.png" alt="Property Listings" style="width: 120px; height: 250px; border-radius: 25px; 
+                            object-fit: cover;">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Request a Demo Modal -->
+                    <div class="modal fade" id="requestDemoModal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+
+                                <!-- Header -->
+                                <div class="modal-header border-0">
+                                    <div class="w-100 text-center">
+                                        <h2 class="fw-bold mb-0">Request a Demo</h2>
+                                        <h5 class="text-muted">Estate360</h5>
+                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <!-- Body -->
+                                <div class="modal-body px-4">
+
+                                    <!-- Top Section (blue background) -->
+                                    <div class="row mb-4 bg-primary text-white p-4 rounded-4 align-items-center">
+
+                                        <div class="container-fluid">
+                                            <div class="row g-4 align-items-center">
+
+                                                <!-- Left: App Options -->
+                                                <div class="col-md-8">
+                                                    <div class="row g-4">
+
+                                                        <!-- App 1 -->
+                                                        <div class="col-md-4 d-flex align-items-center">
+                                                            <img src="assets/img/Group.png" class="img-fluid me-3"
+                                                                alt="Community" style="max-width:150px;">
+                                                            <div>
+                                                                <input type="checkbox" id="community"
+                                                                    class="form-check-input me-1">
+                                                                <label for="community"
+                                                                    class="form-check-label fw-semibold">Estate360
+                                                                    Community</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- App 2 -->
+                                                        <div class="col-md-4 d-flex align-items-center">
+                                                            <img src="assets/img/Group.png" class="img-fluid me-3"
+                                                                alt="Developer" style="max-width:150px;">
+                                                            <div>
+                                                                <input type="checkbox" id="developer"
+                                                                    class="form-check-input me-1">
+                                                                <label for="developer"
+                                                                    class="form-check-label fw-semibold">Estate360
+                                                                    Developer</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- App 3 -->
+                                                        <div class="col-md-4 d-flex align-items-center">
+                                                            <img src="assets/img/Group.png" class="img-fluid me-3"
+                                                                alt="Organization" style="max-width:150px;">
+                                                            <div>
+                                                                <input type="checkbox" id="organization"
+                                                                    class="form-check-input me-1">
+                                                                <label for="organization"
+                                                                    class="form-check-label fw-semibold">Estate360
+                                                                    Organization</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- App 4 (new row, left aligned) -->
+                                                        <div class="col-md-4 d-flex align-items-center">
+                                                            <img src="assets/img/Group.png" class="img-fluid me-3"
+                                                                alt="Homes" style="max-width:150px;">
+                                                            <div>
+                                                                <input type="checkbox" id="homes"
+                                                                    class="form-check-input me-1">
+                                                                <label for="homes"
+                                                                    class="form-check-label fw-semibold">Estate360
+                                                                    Homes</label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- Right: Estate Image (sticks to edge, pushed down) -->
+                                                <div
+                                                    class="col-md-3 d-flex justify-content-end align-items-start pe-4 mt-2">
+                                                    <img src="assets/img/Proposal Cover page (7).png"
+                                                        class="img-fluid rounded shadow" alt="Estate Image"
+                                                        style="height: 250px; width: 200px; object-fit: cover;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container my-4">
+                                        <div class="row">
+                                            <!-- Left: Calendar -->
+                                            <div class="col-md-6">
+                                                <div class="calendar-container border p-3 rounded shadow-sm">
+                                                    <div
+                                                        class="calendar-header d-flex justify-content-between align-items-center mb-2">
+                                                        <button class="nav-btn btn btn-outline-primary btn-sm"
+                                                            id="prevMonth">&lt;</button>
+                                                        <h4 id="monthYear" class="mb-0"></h4>
+                                                        <button class="nav-btn btn btn-outline-primary btn-sm"
+                                                            id="nextMonth">&gt;</button>
+                                                    </div>
+
+                                                    <div class="calendar-days d-grid"
+                                                        style="grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: 600;">
+                                                        <div>Mo</div>
+                                                        <div>Tu</div>
+                                                        <div>We</div>
+                                                        <div>Th</div>
+                                                        <div>Fr</div>
+                                                        <div>Sa</div>
+                                                        <div>Su</div>
+                                                    </div>
+
+                                                    <div class="calendar-dates d-grid mt-2" id="calendarDates"
+                                                        style="grid-template-columns: repeat(7, 1fr); text-align: center;">
+                                                    </div>
+                                                </div>
+
+                                                <p class="mt-2">Selected date: <span id="selectedDate"
+                                                        class="fw-bold">None</span></p>
+                                            </div>
+
+                                            <!-- Right: Form -->
+                                            <div class="col-md-6">
+                                                <div class="p-3 border rounded shadow-sm bg-light">
+                                                    <form>
+                                                        <div class="row">
+                                                            <!-- Organisation Name -->
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="orgName"
+                                                                    class="form-label fw-semibold">Organisation
+                                                                    Name</label>
+                                                                <input type="text" id="orgName" class="form-control"
+                                                                    placeholder="Enter organisation name">
+                                                            </div>
+
+                                                            <!-- Registration Name -->
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="regName"
+                                                                    class="form-label fw-semibold">Registration
+                                                                    Name</label>
+                                                                <input type="text" id="regName" class="form-control"
+                                                                    placeholder="Enter registration name">
+                                                            </div>
+
+                                                            <!-- Organisation Email -->
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="orgEmail"
+                                                                    class="form-label fw-semibold">Organisation
+                                                                    Email</label>
+                                                                <input type="email" id="orgEmail" class="form-control"
+                                                                    placeholder="Enter organisation email">
+                                                            </div>
+
+                                                            <!-- Organisation Phone Number -->
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="orgPhone"
+                                                                    class="form-label fw-semibold">Organisation Phone
+                                                                    Number</label>
+                                                                <input type="tel" id="orgPhone" class="form-control"
+                                                                    placeholder="Enter organisation phone number">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Submit Button -->
+                                                        <button type="submit" class="btn btn-primary w-100">Submit
+                                                            Demo</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Datepicker Script -->
+                <script>
+                    const monthYear = document.getElementById("monthYear");
+                    const calendarDates = document.getElementById("calendarDates");
+                    const selectedDate = document.getElementById("selectedDate");
+
+                    let currentDate = new Date();
+                    renderCalendar();
+
+                    document.getElementById("prevMonth").addEventListener("click", () => {
+                        currentDate.setMonth(currentDate.getMonth() - 1);
+                        renderCalendar();
+                    });
+
+                    document.getElementById("nextMonth").addEventListener("click", () => {
+                        currentDate.setMonth(currentDate.getMonth() + 1);
+                        renderCalendar();
+                    });
+
+                    function renderCalendar() {
+                        const month = currentDate.getMonth();
+                        const year = currentDate.getFullYear();
+
+                        // header text
+                        monthYear.textContent = currentDate.toLocaleString("default", { month: "long" }) + " " + year;
+
+                        // get first and last day
+                        const firstDay = new Date(year, month, 1).getDay();
+                        const lastDate = new Date(year, month + 1, 0).getDate();
+                        const prevLastDate = new Date(year, month, 0).getDate();
+
+                        // build dates grid
+                        let days = "";
+                        // leading blanks (Monday start)
+                        let blanks = (firstDay + 6) % 7;
+                        for (let x = blanks; x > 0; x--) {
+                            days += `<div class="inactive">${prevLastDate - x + 1}</div>`;
+                        }
+
+                        // actual days
+                        for (let i = 1; i <= lastDate; i++) {
+                            // mark demo days (example: every 7th day)
+                            let demoClass = (i % 7 === 0) ? "demo-day" : "";
+                            days += `<div class="${demoClass}" data-date="${i}">${i}</div>`;
+                        }
+
+                        // trailing blanks
+                        const totalCells = blanks + lastDate;
+                        const nextDays = 7 - (totalCells % 7);
+                        if (nextDays < 7) {
+                            for (let j = 1; j <= nextDays; j++) {
+                                days += `<div class="inactive">${j}</div>`;
+                            }
+                        }
+
+                        calendarDates.innerHTML = days;
+
+                        // attach click events
+                        document.querySelectorAll("#calendarDates div[data-date]").forEach(d => {
+                            d.addEventListener("click", () => {
+                                document.querySelectorAll("#calendarDates div").forEach(el => el.classList.remove("active"));
+                                d.classList.add("active");
+                                selectedDate.textContent = `${d.dataset.date} ${monthYear.textContent}`;
+                            });
+                        });
+                    }
+                </script>
+
+
+
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Why Section - Screen 2 -->
+    <section class="py-5 ">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2 class="display-4 fw-bold text-primary mb-3">Why<br>Estate360Hub?</h2>
+                    <h5 class="fw-semibold mb-3">Modern Estates Demand More Than Just Walls and Gates.</h5>
+                    <p class="text-muted mb-4">We bring intelligence, automation, and security to your community</p>
+
+                    <div class="col-lg-6 text-center bg-transparent">
+                        <!-- phone image -->
+                        <img src="assets/img/visitor 12.png" alt="Estate360 Mobile App" class=" img-fluid"
+                            style="max-width:320px; background:transparent;">
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row g-4">
+
+                        <!-- Access Control -->
+                        <div class="col-md-6">
+                            <div class="feature-card position-relative p-5 h-100 bg-light rounded"
+                                style="min-height:250px;">
+                                <i class="fas fa-lock position-absolute top-0 end-0 me-3 mt-3 fa-5x"
+                                    style="color:rgba(108,117,125,0.08);"></i>
+
+                                <h5 class="mt-5 mb-3">Access Control</h5>
+                                <p class="text-muted mb-0">
+                                    QR invites, staff ID verification, and real-time logs
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Smart Maintenance -->
+                        <div class="col-md-6">
+                            <div class="feature-card position-relative p-5 h-100 bg-light rounded"
+                                style="min-height:250px;">
+                                <i class="fas fa-tools position-absolute top-0 end-0 me-3 mt-3 fa-5x"
+                                    style="color:rgba(108,117,125,0.08);"></i>
+
+                                <h5 class="mt-5 mb-3">Smart Maintenance</h5>
+                                <p class="text-muted mb-0">
+                                    Service requests, approvals, and utility payment flows
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Developer Dashboard -->
+                        <div class="col-md-6">
+                            <div class="feature-card position-relative p-5 h-100 bg-light rounded"
+                                style="min-height:250px;">
+                                <i class="fas fa-chart-line position-absolute top-0 end-0 me-3 mt-3 fa-5x"
+                                    style="color:rgba(108,117,125,0.08);"></i>
+
+                                <h5 class="mt-5 mb-3">Developer Dashboard</h5>
+                                <p class="text-muted mb-0">
+                                    Visual estate tracking, workforce logs, buyer access
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Verified Marketplace -->
+                        <div class="col-md-6">
+                            <div class="feature-card position-relative p-5 h-100 bg-light rounded"
+                                style="min-height:250px;">
+                                <i class="fas fa-store position-absolute top-0 end-0 me-3 mt-3 fa-5x"
+                                    style="color:rgba(108,117,125,0.08);"></i>
+
+                                <h5 class="mt-5 mb-3">Verified Marketplace</h5>
+                                <p class="text-muted mb-0">
+                                    Buy, sell, rent, or move – no scams, no stress
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section - Screen 3 -->
+    <section id="products" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title display-5 fw-bold mb-3">The Estate360Hub Ecosystem</h2>
+                <p class="text-muted">Modular. Interconnected. Built for scale</p>
+            </div>
+
+            <!-- Horizontal scroll container -->
+            <div class="d-flex overflow-auto" id="productsScroll" style="scroll-behavior:smooth;">
+
+                <!-- Card 1 -->
+                <div class="card product-card flex-shrink-0 me-3">
+                    <div class="card-body">
+                        <i class="fas fa-users card-icon"></i>
+                        <h5 class="mb-2">Estate360 Community</h5>
+                        <p class="text-muted small mb-4">For Gated Estates & Residents</p>
+                        <ul class="mb-4">
+                            <li class="mb-4">Visitor QR codes</li>
+                            <li class="mb-4">Resident app</li>
+                            <li class="mb-4">Emergency button</li>
+                            <li class="mb-4">Manager dashboard</li>
+                        </ul>
+                        <a href="#" class="text-primary text-decoration-none fw-semibold">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card product-card flex-shrink-0 me-3">
+                    <div class="card-body">
+                        <i class="fas fa-hard-hat card-icon"></i>
+                        <h5 class="mb-2">Estate360 Developer</h5>
+                        <p class="text-muted small mb-4">For Estate Builders & Project Teams</p>
+                        <ul class="mb-4">
+                            <li class="mb-4">Daily site updates</li>
+                            <li class="mb-4">Plot sales + construction sync</li>
+                            <li class="mb-4">Workforce tracking</li>
+                        </ul>
+                        <a href="#" class="text-primary text-decoration-none fw-semibold">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card product-card flex-shrink-0 me-3">
+                    <div class="card-body">
+                        <i class="fas fa-building card-icon"></i>
+                        <h5 class="mb-2">Estate360 Organization</h5>
+                        <p class="text-muted small mb-4">For Offices, Schools & Hospitals</p>
+                        <ul class="mb-4">
+                            <li class="mb-4">Role-based access</li>
+                            <li class="mb-4">Visitor scheduling</li>
+                            <li class="mb-4">Estate security sync</li>
+                        </ul>
+                        <a href="#" class="text-primary text-decoration-none fw-semibold">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card product-card flex-shrink-0 me-3">
+                    <div class="card-body">
+                        <i class="fas fa-home card-icon"></i>
+                        <h5 class="mb-2">Estate360 Homes</h5>
+                        <p class="text-muted small mb-4">For Buyer, Sellers & Agents</p>
+                        <ul class="mb-4">
+                            <li class="mb-4">Verified property listings</li>
+                            <li class="mb-4">Chat with agents</li>
+                            <li class="mb-4">Move-in logistics</li>
+                        </ul>
+                        <a href="#" class="text-primary text-decoration-none fw-semibold">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- One Login Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold text-primary mb-4">One Login. Multiple Experiences.</h2>
+                    <p class="text-muted">Each product works independently — <br>but they're even more powerful
+                        <br>together.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="assets/img/phone.png" alt="One Login Demo" class="img-fluid rounded"
+                        style="height: 300px; width: 100%; object-fit: cover;">
+                </div>
+            </div>
+            <!--
+            <div class="bg-white rounded-3 shadow-sm p-5">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <i class="fas fa-database fs-1 text-primary mb-3"></i>
+                        <h6>Shared database</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-shield-alt fs-1 text-primary mb-3"></i>
+                        <h6>Unified security</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-mobile-alt fs-1 text-primary mb-3"></i>
+                        <h6>Seamless mobile UX</h6>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Trusted Section - Screen 4 -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title display-5 fw-bold mb-3">Trusted by Forward-Thinking Estates & Cities</h2>
+                <p class="text-muted">Marquee Carousel or Grid:</p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="estate-card" style="background-image: url('assets/img/Proposal Cover page (1).png');">
+                        <div class="estate-name">Kings Park Estate</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="estate-card" style="background-image: url('assets/img/Proposal Cover page (2).png');">
+                        <div class="estate-name">ConfidentTech Properties</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="estate-card" style="background-image: url('assets/img/Proposal Cover page (3).png');">
+                        <div class="estate-name">Emerald Courts</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="estate-card" style="background-image: url('assets/img/Proposal Cover page (4).png');">
+                        <div class="estate-name">Nigeria Smart Cities Project</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title display-5 fw-bold mb-5">Real Voices, Real Impact</h2>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="bg-white rounded-3 p-4">
+                        <div class="d-flex">
+                            <div class="testimonial-avatar me-3"
+                                style="background-image: url('assets/img/3d_avatar_1.png');"></div>
+                            <div class="flex-grow-1">
+                                <p class="fst-italic text-muted mb-3">"We run our entire estate on <br>this platform —
+                                    access, billing, <br>communication. Everything just works."</p>
+                                <div class="text-primary fw-semibold small">— Estate Manager, Abuja</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-white rounded-3 p-4">
+                        <div class="d-flex">
+                            <div class="testimonial-avatar me-3"
+                                style="background-image: url('assets/img/3d_avatar_1.png');"></div>
+                            <div class="flex-grow-1">
+                                <p class="fst-italic text-muted mb-3">"We run our entire estate on <br>this platform —
+                                    access, billing, <br>communication. Everything just works."</p>
+                                <div class="text-primary fw-semibold small">— Estate Manager, Abuja</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section - Screen 5 -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary">Built for Africa. Scaling Beyond</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-4">
+                    <div class="stat-card p-5">
+                        <div class="stat-number">25+</div>
+                        <div class="fs-5">Estates</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="stat-card p-5">
+                        <div class="stat-number">10,000+</div>
+                        <div class="fs-5">Residents</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="stat-card p-5">
+                        <div class="stat-number">3M+ Sq.</div>
+                        <div class="fs-5">ft Managed</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="stat-card p-5">
+                        <div class="stat-number">100,000+</div>
+                        <div class="fs-5">Visitor Logs</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="stat-card p-2">
+                        <div class="stat-number">Expansion in progress:</div>
+                        <div class="fs-5">Ghana • Kenya • Rwanda</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section - Screen 6 -->
+    <section id="about" class="mission-section py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+
+                <!-- Text Left -->
+                <div class="col-lg-6">
+                    <h2 class="display-4 fw-bold mb-4">Our Mission</h2>
+                    <p class="fs-4 mb-3">
+                        Rebuilding estate living around trust, security, and digital empowerment.
+                    </p>
+                    <p class="fs-5 opacity-75">
+                        Transparent pricing. Local support. Enterprise-grade infrastructure.
+                    </p>
+                </div>
+
+                <!-- Image Right -->
+                <div class="col-lg-6 text-center">
+                    <img src="assets/img/Proposal Cover page (7).png" alt="Our Mission" class="img-fluid rounded">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Road Ahead Section -->
+    <section class="road-section py-5 position-relative"
+        style="background: url('assets/img/Proposal Cover page (8).png') center/cover no-repeat;">
+
+        <!-- Overlay -->
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+
+        <div class="container py-5 position-relative">
+            <h2 class="display-5 fw-bold text-center text-white mb-5">The Road Ahead</h2>
+
+            <div class="row g-4 text-center text-white">
+                <div class="col-lg-3 col-md-6">
+                    <div class="road-icon mb-3">
+                        <i class="fas fa-robot fa-2x"></i>
+                    </div>
+                    <h6>AI estate assistant</h6>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="road-icon mb-3">
+                        <i class="fas fa-hand-point-up fa-2x"></i>
+                    </div>
+                    <h6>Smart access gates</h6>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="road-icon mb-3">
+                        <i class="fas fa-code fa-2x"></i>
+                    </div>
+                    <h6>Mortgage APIs</h6>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="road-icon mb-3">
+                        <i class="fas fa-map fa-2x"></i>
+                    </div>
+                    <h6>National rollout</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Section - Screen 7 -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h4 class="display-4 fw-bold text-primary mb-4">
+                        Ready to Transform Your Estate?
+                    </h4>
+                    <p class="text-muted fs-5 mb-5">
+                        Power your estate, property, or organization with Africa's #1 smart estate platform.
+                    </p>
+
+                    <!-- Image under the text -->
+                    <img src="assets/img/Proposal Cover page (15) 1.png" alt="Support Person" class="img-fluid mb-4"
+                        style="max-width:240px; height:auto;">
+
+                    <!-- Button row -->
+                    <div class="d-flex align-items-center gap-4">
+                        <button class="btn btn-primary btn-lg rounded-pill px-4 py-3">
+                            <i class="fas fa-phone me-2"></i>
+                            Talk to Our Team
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 text-center">
+                    <img src="assets/img/Group.png" alt="Devices Mockup" class="devices-mockup img-fluid"
+                        style="height: 400px; width: 700px; object-fit: contain;">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="d-flex align-items-center mb-4">
+                        <a class="navbar-brand" href="#">
+                            <img src="assets/img/3606.png" alt="State360 Logo" class="d-inline-block align-text-top"
+                                style="height: 70px;">
+                        </a>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Contact:</strong> support@estate360hub.com
+                    </div>
+                    <div class="mb-4">
+                        <strong>Phone:</strong> +234081234567
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <div class="d-flex justify-content-lg-end gap-4 mt-4 mt-lg-0">
+                        <a href="#" class="text-white text-decoration-none">Terms</a>
+                        <a href="#" class="text-white text-decoration-none">Privacy</a>
+                        <a href="#" class="text-white text-decoration-none">LinkedIn</a>
+                        <a href="#" class="text-white text-decoration-none">Twitter</a>
+                        <a href="#" class="text-white text-decoration-none">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="text-center opacity-75">
+                <p class="mb-0">&copy; 2024 Estate360Hub - Powered by EchobitsTech</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0, 0, 0, 0.8)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.3)';
+            }
+        });
+    </script>
+</body>
+
+</html>
