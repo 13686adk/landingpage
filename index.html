@@ -9,7 +9,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary-blue: #4a90c2;
@@ -875,6 +879,65 @@
         .calendar-dates div:hover:not(.inactive):not(.active) {
             background: #f0f0f0;
         }
+
+        /* Apply the Google Font */
+        .hero-title,
+        .seamless-outline,
+        .hero-description,
+        .text-uppercase {
+            font-family: 'Poppins', sans-serif;
+            /* same clean look as screenshot */
+        }
+
+        /* Title styling */
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* Seamless outlined text */
+        .seamless-outline {
+            font-size: 3rem;
+            font-weight: 700;
+
+        }
+
+        /* Description styling */
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            background-color: rgba(0, 123, 255, 0.08);
+            color: #ffffff;
+        }
+
+
+        .estate-section.blue {
+            background-color: #007bff;
+            /* Bootstrap primary blue */
+            border-radius: 20px;
+            /* round corners */
+            padding: 2rem;
+            /* space inside */
+            color: #fff;
+            /* white text color inside */
+        }
+
+        .estate-section.blue label {
+            color: #fff;
+            /* force labels to be white */
+        }
+
+        .estate-section.blue {
+            background-color: #007bff;
+            border-radius: 20px;
+            padding: 2rem;
+            color: #fff;
+        }
+
+        .estate-section.blue label {
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -917,18 +980,15 @@
     <section id="home" class="hero-bg d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center">
+
+                <!-- Left Column: Text + Buttons -->
                 <div class="col-lg-6">
                     <div class="mb-0">
                         <small class="text-uppercase text-white-50">Estate 360</small>
                     </div>
-
                     <h1 class="hero-title mb-2 text-white">Smart. Secure.</h1>
-
-                    <!-- Seamless text with stroke -->
                     <div class="seamless-outline mb-2">Seamless.</div>
-
-                    <p class="hero-description mb-2 p-3 rounded"
-                        style="background-color: rgba(0,123,255,0.08); color:white;">
+                    <p class="hero-description mb-2 p-3 rounded">
                         The all-in-one platform powering the future of estates from digital access to verified home
                         listings.
                     </p>
@@ -958,455 +1018,364 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Explore Suite Modal -->
-                    <div class="modal fade" id="exploreSuiteModal" tabindex="-1"
-                        aria-labelledby="exploreSuiteModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <div class="w-100 text-center">
-                                        <h2 class="fw-bold mb-0">Expore Suite</h2>
-                                        <h5 class="text-muted">Estate360</h5>
-                                    </div>
-                                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-
-                                <!-- Modal Body with Scrollable Content -->
-                                <div class="modal-body">
-                                    <!-- Estate 360 Community Section -->
-                                    <div class="estate-section blue">
-                                        <div class="estate-content">
-                                            <div class="estate-image left">
-                                                <a href="#" style="display: inline-block; text-decoration: none;">
-                                                    <img src="assets/img/222.png" alt="Community App Interface" style="width: 120px; height: 250px; border-radius: 25px; 
-                            object-fit: cover;">
-                                                </a>
-                                            </div>
-
-                                            <div class="estate-text">
-                                                <h2 class="estate-title">Estate 360</h2>
-                                                <h3 class="estate-subtitle">Community</h3>
-                                                <p class="estate-description">
-                                                    Connecting residents and fostering community engagement through
-                                                    digital innovation.
-                                                    Experience seamless communication, event management, and
-                                                    neighborhood connectivity
-                                                    all in one comprehensive platform designed for modern communities.
-                                                </p>
-                                                <div class="download-buttons">
-                                                    <a href="#" class="download-btn">
-                                                        <i class="fab fa-apple"></i>
-                                                        App Store
-                                                    </a>
-                                                    <a href="#" class="download-btn">
-                                                        <i class="fab fa-google-play"></i>
-                                                        Play Store
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="estate-image right">
-                                                <a href="#" style="display: inline-block; text-decoration: none;">
-                                                    <img src="assets/img/Mask group.png" alt="Community Features" style="width: 120px; height: 250px; border-radius: 25px; 
-                            object-fit: cover; ">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Estate 360 Developer Section -->
-                                    <div class="estate-section white">
-                                        <div class="construction-bg"></div>
-                                        <div class="estate-content">
-                                            <div class="estate-image left">
-                                                <a href="#" style="display: inline-block; text-decoration: none;">
-                                                    <img src="assets/img/iPhone 15 Pro.png" alt="Developer Tools" style="width: 150px; height: 200px; border-radius: 15px; 
-                            object-fit: cover;">
-                                                </a>
-                                            </div>
-
-                                            <div class="estate-text">
-                                                <h2 class="estate-title" style="color: #333;">Estate 360</h2>
-                                                <h3 class="estate-subtitle" style="color: #666;">Developer</h3>
-                                                <p class="estate-description" style="color: #555;">
-                                                    Streamline your development projects with comprehensive project
-                                                    management tools.
-                                                    From planning to completion, track progress, manage resources, and
-                                                    coordinate teams
-                                                    efficiently with our developer-focused platform.
-                                                </p>
-                                                <div class="download-buttons">
-                                                    <a href="#" class="download-btn">
-                                                        <i class="fab fa-apple"></i>
-                                                        App Store
-                                                    </a>
-                                                    <a href="#" class="download-btn">
-                                                        <i class="fab fa-google-play"></i>
-                                                        Play Store
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="estate-image right">
-                                                <a href="#" style="display: inline-block; text-decoration: none;">
-                                                    <img src="assets/img/construction-silhouette-removebg-preview 1.png"
-                                                        alt="Construction Management" style="width: 150px; height: 200px; border-radius: 15px; 
-                            object-fit: cover;">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Estate 360 Organization Section -->
-                                    <div class="estate-section blue">
-                                        <div class="estate-content">
-                                            <div class="estate-image left">
-                                                <a href="#" style="display: inline-block; text-decoration: none;">
-                                                    <img src="assets/img/modern-building-bucharest-romania-removebg-preview 1.png"
-                                                        alt="Modern Building" style="width: 120px; height: 250px; border-radius: 15px; 
-                            object-fit: cover;">
-                                                </a>
-                                            </div>
-
-                                            <div class="estate-text">
-                                                <h2 class="estate-title">Estate 360</h2>
-                                                <h3 class="estate-subtitle">Organization</h3>
-                                                <p class="estate-description">
-                                                    Optimize organizational workflows and enhance productivity with
-                                                    integrated management solutions.
-                                                    Designed for property management companies and real estate
-                                                    organizations to streamline
-                                                    operations and improve client relationships.
-                                                </p>
-                                                <button class="contact-btn btn btn-primary">
-                                                    <i class="fas fa-phone me-2"></i>
-                                                    Contact Support
-                                                </button>
-                                            </div>
-
-                                            <div class="estate-image right">
-                                                <a href="#" style="display: inline-block; text-decoration: none;">
-                                                    <img src="assets/img/MacBook Air (15 inch).png"
-                                                        alt="Organization Dashboard" style="width: 250px; height: 180px; border-radius: 15px; 
-                         object-fit: cover;">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Estate 360 Homes Section -->
-                                    <div class="estate-section white">
-                                        <div class="estate-content">
-                                            <div class="estate-image left">
-
-                                            </div>
-
-                                            <div class="estate-text">
-                                                <h2 class="estate-title" style="color: #333;">Estate 360</h2>
-                                                <h3 class="estate-subtitle" style="color: #666;">Homes</h3>
-                                                <p class="estate-description" style="color: #555;">
-                                                    Discover your dream home with our comprehensive property search and
-                                                    management platform.
-                                                    Browse listings, schedule viewings, and manage your property
-                                                    portfolio with advanced
-                                                    filtering and matching capabilities.
-                                                </p>
-                                                <div class="download-buttons">
-                                                    <a href="#" class="download-btn">
-                                                        <i class="fab fa-apple"></i>
-                                                        App Store
-                                                    </a>
-                                                    <a href="#" class="download-btn">
-                                                        <i class="fab fa-google-play"></i>
-                                                        Play Store
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="estate-image right">
-                                                <a href="#" style="display: inline-block; text-decoration: none;">
-                                                    <img src="assets/img/222.png" alt="Property Listings" style="width: 120px; height: 250px; border-radius: 25px; 
-                            object-fit: cover;">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Request a Demo Modal -->
-                    <div class="modal fade" id="requestDemoModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-                            <div class="modal-content">
-
-                                <!-- Header -->
-                                <div class="modal-header border-0">
-                                    <div class="w-100 text-center">
-                                        <h2 class="fw-bold mb-0">Request a Demo</h2>
-                                        <h5 class="text-muted">Estate360</h5>
-                                    </div>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-
-                                <!-- Body -->
-                                <div class="modal-body px-4">
-
-                                    <!-- Top Section (blue background) -->
-                                    <div class="row mb-4 bg-primary text-white p-4 rounded-4 align-items-center">
-
-                                        <div class="container-fluid">
-                                            <div class="row g-4 align-items-center">
-
-                                                <!-- Left: App Options -->
-                                                <div class="col-md-8">
-                                                    <div class="row g-4">
-
-                                                        <!-- App 1 -->
-                                                        <div class="col-md-4 d-flex align-items-center">
-                                                            <img src="assets/img/Group.png" class="img-fluid me-3"
-                                                                alt="Community" style="max-width:150px;">
-                                                            <div>
-                                                                <input type="checkbox" id="community"
-                                                                    class="form-check-input me-1">
-                                                                <label for="community"
-                                                                    class="form-check-label fw-semibold">Estate360
-                                                                    Community</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- App 2 -->
-                                                        <div class="col-md-4 d-flex align-items-center">
-                                                            <img src="assets/img/Group.png" class="img-fluid me-3"
-                                                                alt="Developer" style="max-width:150px;">
-                                                            <div>
-                                                                <input type="checkbox" id="developer"
-                                                                    class="form-check-input me-1">
-                                                                <label for="developer"
-                                                                    class="form-check-label fw-semibold">Estate360
-                                                                    Developer</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- App 3 -->
-                                                        <div class="col-md-4 d-flex align-items-center">
-                                                            <img src="assets/img/Group.png" class="img-fluid me-3"
-                                                                alt="Organization" style="max-width:150px;">
-                                                            <div>
-                                                                <input type="checkbox" id="organization"
-                                                                    class="form-check-input me-1">
-                                                                <label for="organization"
-                                                                    class="form-check-label fw-semibold">Estate360
-                                                                    Organization</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- App 4 (new row, left aligned) -->
-                                                        <div class="col-md-4 d-flex align-items-center">
-                                                            <img src="assets/img/Group.png" class="img-fluid me-3"
-                                                                alt="Homes" style="max-width:150px;">
-                                                            <div>
-                                                                <input type="checkbox" id="homes"
-                                                                    class="form-check-input me-1">
-                                                                <label for="homes"
-                                                                    class="form-check-label fw-semibold">Estate360
-                                                                    Homes</label>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <!-- Right: Estate Image (sticks to edge, pushed down) -->
-                                                <div
-                                                    class="col-md-3 d-flex justify-content-end align-items-start pe-4 mt-2">
-                                                    <img src="assets/img/Proposal Cover page (7).png"
-                                                        class="img-fluid rounded shadow" alt="Estate Image"
-                                                        style="height: 250px; width: 200px; object-fit: cover;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="container my-4">
-                                        <div class="row">
-                                            <!-- Left: Calendar -->
-                                            <div class="col-md-6">
-                                                <div class="calendar-container border p-3 rounded shadow-sm">
-                                                    <div
-                                                        class="calendar-header d-flex justify-content-between align-items-center mb-2">
-                                                        <button class="nav-btn btn btn-outline-primary btn-sm"
-                                                            id="prevMonth">&lt;</button>
-                                                        <h4 id="monthYear" class="mb-0"></h4>
-                                                        <button class="nav-btn btn btn-outline-primary btn-sm"
-                                                            id="nextMonth">&gt;</button>
-                                                    </div>
-
-                                                    <div class="calendar-days d-grid"
-                                                        style="grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: 600;">
-                                                        <div>Mo</div>
-                                                        <div>Tu</div>
-                                                        <div>We</div>
-                                                        <div>Th</div>
-                                                        <div>Fr</div>
-                                                        <div>Sa</div>
-                                                        <div>Su</div>
-                                                    </div>
-
-                                                    <div class="calendar-dates d-grid mt-2" id="calendarDates"
-                                                        style="grid-template-columns: repeat(7, 1fr); text-align: center;">
-                                                    </div>
-                                                </div>
-
-                                                <p class="mt-2">Selected date: <span id="selectedDate"
-                                                        class="fw-bold">None</span></p>
-                                            </div>
-
-                                            <!-- Right: Form -->
-                                            <div class="col-md-6">
-                                                <div class="p-3 border rounded shadow-sm bg-light">
-                                                    <form>
-                                                        <div class="row">
-                                                            <!-- Organisation Name -->
-                                                            <div class="col-md-6 mb-3">
-                                                                <label for="orgName"
-                                                                    class="form-label fw-semibold">Organisation
-                                                                    Name</label>
-                                                                <input type="text" id="orgName" class="form-control"
-                                                                    placeholder="Enter organisation name">
-                                                            </div>
-
-                                                            <!-- Registration Name -->
-                                                            <div class="col-md-6 mb-3">
-                                                                <label for="regName"
-                                                                    class="form-label fw-semibold">Registration
-                                                                    Name</label>
-                                                                <input type="text" id="regName" class="form-control"
-                                                                    placeholder="Enter registration name">
-                                                            </div>
-
-                                                            <!-- Organisation Email -->
-                                                            <div class="col-md-6 mb-3">
-                                                                <label for="orgEmail"
-                                                                    class="form-label fw-semibold">Organisation
-                                                                    Email</label>
-                                                                <input type="email" id="orgEmail" class="form-control"
-                                                                    placeholder="Enter organisation email">
-                                                            </div>
-
-                                                            <!-- Organisation Phone Number -->
-                                                            <div class="col-md-6 mb-3">
-                                                                <label for="orgPhone"
-                                                                    class="form-label fw-semibold">Organisation Phone
-                                                                    Number</label>
-                                                                <input type="tel" id="orgPhone" class="form-control"
-                                                                    placeholder="Enter organisation phone number">
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- Submit Button -->
-                                                        <button type="submit" class="btn btn-primary w-100">Submit
-                                                            Demo</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Datepicker Script -->
-                <script>
-                    const monthYear = document.getElementById("monthYear");
-                    const calendarDates = document.getElementById("calendarDates");
-                    const selectedDate = document.getElementById("selectedDate");
-
-                    let currentDate = new Date();
-                    renderCalendar();
-
-                    document.getElementById("prevMonth").addEventListener("click", () => {
-                        currentDate.setMonth(currentDate.getMonth() - 1);
-                        renderCalendar();
-                    });
-
-                    document.getElementById("nextMonth").addEventListener("click", () => {
-                        currentDate.setMonth(currentDate.getMonth() + 1);
-                        renderCalendar();
-                    });
-
-                    function renderCalendar() {
-                        const month = currentDate.getMonth();
-                        const year = currentDate.getFullYear();
-
-                        // header text
-                        monthYear.textContent = currentDate.toLocaleString("default", { month: "long" }) + " " + year;
-
-                        // get first and last day
-                        const firstDay = new Date(year, month, 1).getDay();
-                        const lastDate = new Date(year, month + 1, 0).getDate();
-                        const prevLastDate = new Date(year, month, 0).getDate();
-
-                        // build dates grid
-                        let days = "";
-                        // leading blanks (Monday start)
-                        let blanks = (firstDay + 6) % 7;
-                        for (let x = blanks; x > 0; x--) {
-                            days += `<div class="inactive">${prevLastDate - x + 1}</div>`;
-                        }
-
-                        // actual days
-                        for (let i = 1; i <= lastDate; i++) {
-                            // mark demo days (example: every 7th day)
-                            let demoClass = (i % 7 === 0) ? "demo-day" : "";
-                            days += `<div class="${demoClass}" data-date="${i}">${i}</div>`;
-                        }
-
-                        // trailing blanks
-                        const totalCells = blanks + lastDate;
-                        const nextDays = 7 - (totalCells % 7);
-                        if (nextDays < 7) {
-                            for (let j = 1; j <= nextDays; j++) {
-                                days += `<div class="inactive">${j}</div>`;
-                            }
-                        }
-
-                        calendarDates.innerHTML = days;
-
-                        // attach click events
-                        document.querySelectorAll("#calendarDates div[data-date]").forEach(d => {
-                            d.addEventListener("click", () => {
-                                document.querySelectorAll("#calendarDates div").forEach(el => el.classList.remove("active"));
-                                d.classList.add("active");
-                                selectedDate.textContent = `${d.dataset.date} ${monthYear.textContent}`;
-                            });
-                        });
-                    }
-                </script>
-
-
-
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+                <!-- Right Column: Phone Image -->
+                <div class="col-lg-6 text-center">
+                    <img src="assets/img/Group.png" alt="Estate360 Mobile App" class="img-fluid" style="
+         width: 500px;         /* wider */
+         height: 700px;        /* taller */
+         object-fit: contain;  /* keep content inside */
+       ">
+                </div>
 
 
             </div>
+        </div>
+        <!-- Explore Suite Modal -->
+        <div class="modal fade" id="exploreSuiteModal" tabindex="-1" aria-labelledby="exploreSuiteModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <div class="w-100 text-center">
+                            <h2 class="fw-bold mb-0">Expore Suite</h2>
+                            <h5 class="text-muted">Estate360</h5>
+                        </div>
+                        <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
+                    <!-- Modal Body with Scrollable Content -->
+                    <div class="modal-body">
+                        <!-- Estate 360 Community Section -->
+                        <div class="estate-section blue">
+                            <div class="estate-content">
+                                <div class="estate-image left">
+                                    <a href="#" style="display: inline-block; text-decoration: none;">
+                                        <img src="assets/img/222.png" alt="Community App Interface" style="width: 120px; height: 250px; border-radius: 25px; 
+                            object-fit: cover;">
+                                    </a>
+                                </div>
 
+                                <div class="estate-text">
+                                    <h2 class="estate-title">Estate 360</h2>
+                                    <h3 class="estate-subtitle">Community</h3>
+                                    <p class="estate-description">
+                                        Connecting residents and fostering community engagement through
+                                        digital innovation.
+                                        Experience seamless communication, event management, and
+                                        neighborhood connectivity
+                                        all in one comprehensive platform designed for modern communities.
+                                    </p>
+                                    <div class="download-buttons">
+                                        <a href="#" class="download-btn">
+                                            <i class="fab fa-apple"></i>
+                                            App Store
+                                        </a>
+                                        <a href="#" class="download-btn">
+                                            <i class="fab fa-google-play"></i>
+                                            Play Store
+                                        </a>
+                                    </div>
+                                </div>
 
+                                <div class="estate-image right">
+                                    <a href="#" style="display: inline-block; text-decoration: none;">
+                                        <img src="assets/img/Mask group.png" alt="Community Features" style="width: 120px; height: 250px; border-radius: 25px; 
+                            object-fit: cover; ">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estate 360 Developer Section -->
+                        <div class="estate-section white">
+                            <div class="construction-bg"></div>
+                            <div class="estate-content">
+                                <div class="estate-image left">
+                                    <a href="#" style="display: inline-block; text-decoration: none;">
+                                        <img src="assets/img/iPhone 15 Pro.png" alt="Developer Tools" style="width: 150px; height: 200px; border-radius: 15px; 
+                            object-fit: cover;">
+                                    </a>
+                                </div>
+
+                                <div class="estate-text">
+                                    <h2 class="estate-title" style="color: #333;">Estate 360</h2>
+                                    <h3 class="estate-subtitle" style="color: #666;">Developer</h3>
+                                    <p class="estate-description" style="color: #555;">
+                                        Streamline your development projects with comprehensive project
+                                        management tools.
+                                        From planning to completion, track progress, manage resources, and
+                                        coordinate teams
+                                        efficiently with our developer-focused platform.
+                                    </p>
+                                    <div class="download-buttons">
+                                        <a href="#" class="download-btn">
+                                            <i class="fab fa-apple"></i>
+                                            App Store
+                                        </a>
+                                        <a href="#" class="download-btn">
+                                            <i class="fab fa-google-play"></i>
+                                            Play Store
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="estate-image right">
+                                    <a href="#" style="display: inline-block; text-decoration: none;">
+                                        <img src="assets/img/construction-silhouette-removebg-preview 1.png"
+                                            alt="Construction Management" style="width: 150px; height: 200px; border-radius: 15px; 
+                            object-fit: cover;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estate 360 Organization Section -->
+                        <div class="estate-section blue">
+                            <div class="estate-content">
+                                <div class="estate-image left">
+                                    <a href="#" style="display: inline-block; text-decoration: none;">
+                                        <img src="assets/img/modern-building-bucharest-romania-removebg-preview 1.png"
+                                            alt="Modern Building" style="width: 120px; height: 250px; border-radius: 15px; 
+                            object-fit: cover;">
+                                    </a>
+                                </div>
+                                <div class="estate-text">
+                                    <h2 class="estate-title">Estate 360</h2>
+                                    <h3 class="estate-subtitle">Organization</h3>
+                                    <p class="estate-description">
+                                        Optimize organizational workflows and enhance productivity with
+                                        integrated management solutions.
+                                        Designed for property management companies and real estate
+                                        organizations to streamline
+                                        operations and improve client relationships.
+                                    </p>
+                                    <button class="contact-btn btn btn-primary">
+                                        <i class="fas fa-phone me-2"></i>
+                                        Contact Support
+                                    </button>
+                                </div>
+
+                                <div class="estate-image right">
+                                    <a href="#" style="display: inline-block; text-decoration: none;">
+                                        <img src="assets/img/MacBook Air (15 inch).png" alt="Organization Dashboard"
+                                            style="width: 250px; height: 180px; border-radius: 15px; 
+                         object-fit: cover;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estate 360 Homes Section -->
+                        <div class="estate-section white">
+                            <div class="estate-content">
+                                <div class="estate-image left">
+                                </div>
+                                <div class="estate-text">
+                                    <h2 class="estate-title" style="color: #333;">Estate 360</h2>
+                                    <h3 class="estate-subtitle" style="color: #666;">Homes</h3>
+                                    <p class="estate-description" style="color: #555;">
+                                        Discover your dream home with our comprehensive property search and
+                                        management platform.
+                                        Browse listings, schedule viewings, and manage your property
+                                        portfolio with advanced
+                                        filtering and matching capabilities.
+                                    </p>
+                                    <div class="download-buttons">
+                                        <a href="#" class="download-btn">
+                                            <i class="fab fa-apple"></i>
+                                            App Store
+                                        </a>
+                                        <a href="#" class="download-btn">
+                                            <i class="fab fa-google-play"></i>
+                                            Play Store
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="estate-image right">
+                                    <a href="#" style="display: inline-block; text-decoration: none;">
+                                        <img src="assets/img/222.png" alt="Property Listings" style="width: 120px; height: 250px; border-radius: 25px; 
+                            object-fit: cover;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Request a Demo Modal -->
+        <div class="modal fade" id="requestDemoModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header border-0">
+                        <div class="w-100 text-center">
+                            <h2 class="fw-bold mb-0">Request a Demo</h2>
+                            <h5 class="text-muted">Estate360</h5>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body px-4">
+
+                        <!-- Blue Rounded Section -->
+                        <div class="estate-section blue">
+                            <div class="container">
+                                <div class="row align-items-center g-4">
+
+                                    <!-- Left: App Options -->
+                                    <div class="col-md-12">
+                                        <div class="row g-4">
+                                            <!-- App 1 -->
+                                            <div class="col-md-4 d-flex align-items-center">
+                                                <img src="assets/img/Group.png" class="img-fluid me-3" alt="Community"
+                                                    style="max-width:150px;">
+                                                <div>
+                                                    <input type="checkbox" id="community" class="form-check-input me-1">
+                                                    <label for="community"
+                                                        class="form-check-label fw-semibold text-white">Estate360
+                                                        Community</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- App 2 -->
+                                            <div class="col-md-4 d-flex align-items-center">
+                                                <img src="assets/img/Group.png" class="img-fluid me-3" alt="Developer"
+                                                    style="max-width:150px;">
+                                                <div>
+                                                    <input type="checkbox" id="developer" class="form-check-input me-1">
+                                                    <label for="developer"
+                                                        class="form-check-label fw-semibold text-white">Estate360
+                                                        Developer</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- App 3 -->
+                                            <div class="col-md-4 d-flex align-items-center">
+                                                <img src="assets/img/Group.png" class="img-fluid me-3"
+                                                    alt="Organization" style="max-width:150px;">
+                                                <div>
+                                                    <input type="checkbox" id="organization"
+                                                        class="form-check-input me-1">
+                                                    <label for="organization"
+                                                        class="form-check-label fw-semibold text-white">Estate360
+                                                        Organization</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- App 4 -->
+                                            <div class="col-md-4 d-flex align-items-center">
+                                                <img src="assets/img/Group.png" class="img-fluid me-3" alt="Homes"
+                                                    style="max-width:150px;">
+                                                <div>
+                                                    <input type="checkbox" id="homes" class="form-check-input me-1">
+                                                    <label for="homes"
+                                                        class="form-check-label fw-semibold text-white">Estate360
+                                                        Homes</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Construction Image below, full width right aligned -->
+                                    <div class="col-md-8 d-flex justify-content-end">
+                                        <img src="assets/img/Proposal Cover page (7).png"
+                                            class="img-fluid rounded shadow" alt="Estate Image"
+                                            style="height: 250px; width: 200px; object-fit: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container my-4">
+                            <div class="row">
+
+                                <!-- Left: Calendar -->
+                                <div class="col-md-6">
+                                    <div class="calendar-container border p-3">
+                                        <div
+                                            class="calendar-header d-flex justify-content-between align-items-center mb-2">
+                                            <button class="nav-btn btn btn-outline-primary btn-sm"
+                                                id="prevMonth">&lt;</button>
+                                            <h4 id="monthYear" class="mb-0"></h4>
+                                            <button class="nav-btn btn btn-outline-primary btn-sm"
+                                                id="nextMonth">&gt;</button>
+                                        </div>
+                                        <div class="calendar-days d-grid"
+                                            style="grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: 600;">
+                                            <div>Mo</div>
+                                            <div>Tu</div>
+                                            <div>We</div>
+                                            <div>Th</div>
+                                            <div>Fr</div>
+                                            <div>Sa</div>
+                                            <div>Su</div>
+                                        </div>
+                                        <div class="calendar-dates d-grid mt-2" id="calendarDates"
+                                            style="grid-template-columns: repeat(7, 1fr); text-align: center;">
+                                        </div>
+                                    </div>
+                                    <p class="mt-2">Selected date: <span id="selectedDate" class="fw-bold">None</span>
+                                    </p>
+                                </div>
+
+                                <!-- Right: Form -->
+                                <div class="col-md-6">
+                                    <div class="p-3 border bg-light">
+                                        <form>
+                                            <div class="row">
+                                                <!-- Organisation Name -->
+                                                <div class="col-md-12 mb-3">
+                                                    <label for="orgName" class="form-label fw-semibold">Organisation
+                                                        Name</label>
+                                                    <input type="text" id="orgName" class="form-control"
+                                                        placeholder="Enter organisation name">
+                                                </div>
+
+                                                <!-- Registration Name -->
+                                                <div class="col-md-12 mb-3">
+                                                    <label for="regName" class="form-label fw-semibold">Registration
+                                                        Name</label>
+                                                    <input type="text" id="regName" class="form-control"
+                                                        placeholder="Enter registration name">
+                                                </div>
+
+                                                <!-- Organisation Email -->
+                                                <div class="col-md-12 mb-3">
+                                                    <label for="orgEmail" class="form-label fw-semibold">Organisation
+                                                        Email</label>
+                                                    <input type="email" id="orgEmail" class="form-control"
+                                                        placeholder="Enter organisation email">
+                                                </div>
+
+                                                <!-- Organisation Phone Number -->
+                                                <div class="col-md-12 mb-3">
+                                                    <label for="orgPhone" class="form-label fw-semibold">Organisation
+                                                        Phone
+                                                        Number</label>
+                                                    <input type="tel" id="orgPhone" class="form-control"
+                                                        placeholder="Enter organisation phone number">
+                                                </div>
+                                            </div>
+
+                                            <!-- Submit Button -->
+                                            <button type="submit" class="btn btn-primary w-100">Submit
+                                                Demo</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1418,17 +1387,13 @@
                     <h2 class="display-4 fw-bold text-primary mb-3">Why<br>Estate360Hub?</h2>
                     <h5 class="fw-semibold mb-3">Modern Estates Demand More Than Just Walls and Gates.</h5>
                     <p class="text-muted mb-4">We bring intelligence, automation, and security to your community</p>
-
                     <div class="col-lg-6 text-center bg-transparent">
+
                         <!-- phone image -->
-                        <img src="assets/img/visitor 12.png" alt="Estate360 Mobile App" class=" img-fluid"
+                        <img src="assets/img/Visitor 12.gif" alt="Estate360 Mobile App" class=" img-fluid"
                             style="max-width:320px; background:transparent;">
-
-
                     </div>
-
                 </div>
-
                 <div class="col-lg-8">
                     <div class="row g-4">
 
@@ -1438,7 +1403,6 @@
                                 style="min-height:250px;">
                                 <i class="fas fa-lock position-absolute top-0 end-0 me-3 mt-3 fa-5x"
                                     style="color:rgba(108,117,125,0.08);"></i>
-
                                 <h5 class="mt-5 mb-3">Access Control</h5>
                                 <p class="text-muted mb-0">
                                     QR invites, staff ID verification, and real-time logs
@@ -1452,7 +1416,6 @@
                                 style="min-height:250px;">
                                 <i class="fas fa-tools position-absolute top-0 end-0 me-3 mt-3 fa-5x"
                                     style="color:rgba(108,117,125,0.08);"></i>
-
                                 <h5 class="mt-5 mb-3">Smart Maintenance</h5>
                                 <p class="text-muted mb-0">
                                     Service requests, approvals, and utility payment flows
@@ -1466,7 +1429,6 @@
                                 style="min-height:250px;">
                                 <i class="fas fa-chart-line position-absolute top-0 end-0 me-3 mt-3 fa-5x"
                                     style="color:rgba(108,117,125,0.08);"></i>
-
                                 <h5 class="mt-5 mb-3">Developer Dashboard</h5>
                                 <p class="text-muted mb-0">
                                     Visual estate tracking, workforce logs, buyer access
@@ -1480,20 +1442,14 @@
                                 style="min-height:250px;">
                                 <i class="fas fa-store position-absolute top-0 end-0 me-3 mt-3 fa-5x"
                                     style="color:rgba(108,117,125,0.08);"></i>
-
                                 <h5 class="mt-5 mb-3">Verified Marketplace</h5>
                                 <p class="text-muted mb-0">
                                     Buy, sell, rent, or move – no scams, no stress
                                 </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
     </section>
@@ -1501,8 +1457,8 @@
     <!-- Ecosystem Section - Screen 3 -->
     <section id="products" class="py-5">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="section-title display-5 fw-bold mb-3">The Estate360Hub Ecosystem</h2>
+            <div class="text-lift mb-5">
+                <h2 class="section-title display-5 mb-3">The Estate360Hub Ecosystem</h2>
                 <p class="text-muted">Modular. Interconnected. Built for scale</p>
             </div>
 
@@ -1574,8 +1530,8 @@
     </section>
 
     <!-- One Login Section -->
-    <section class="py-5 bg-light">
-        <div class="container py-5">
+    <section class="py-0 bg-light">
+        <div class="container py-0">
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6">
                     <h2 class="display-5 fw-bold text-primary mb-4">One Login. Multiple Experiences.</h2>
@@ -1583,9 +1539,9 @@
                         <br>together.
                     </p>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="assets/img/phone.png" alt="One Login Demo" class="img-fluid rounded"
-                        style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="col-lg-6 text-center d-flex justify-content-center align-items-center">
+                    <img src="assets/img/Group.png" alt="Estate360 Mobile App" class="img-fluid rounded"
+                        style="height: 450px; width: auto; object-fit: contain;">
                 </div>
             </div>
             <!--
@@ -1616,7 +1572,6 @@
                 <h2 class="section-title display-5 fw-bold mb-3">Trusted by Forward-Thinking Estates & Cities</h2>
                 <p class="text-muted">Marquee Carousel or Grid:</p>
             </div>
-
             <div class="row g-4 mb-5">
                 <div class="col-lg-3 col-md-6">
                     <div class="estate-card" style="background-image: url('assets/img/Proposal Cover page (1).png');">
@@ -1646,7 +1601,6 @@
     <section class="py-5 bg-light">
         <div class="container py-5">
             <h2 class="section-title display-5 fw-bold mb-5">Real Voices, Real Impact</h2>
-
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="bg-white rounded-3 p-4">
@@ -1681,10 +1635,9 @@
     <!-- Stats Section - Screen 5 -->
     <section class="py-5">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold text-primary">Built for Africa. Scaling Beyond</h2>
+            <div class="text-lift mb-5">
+                <h2 class="display-5 fw-semibold text-primary">Built for Africa. Scaling Beyond</h2>
             </div>
-
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-3 col-md-4">
                     <div class="stat-card p-5">
@@ -1727,12 +1680,12 @@
 
                 <!-- Text Left -->
                 <div class="col-lg-6">
-                    <h2 class="display-4 fw-bold mb-4">Our Mission</h2>
-                    <p class="fs-4 mb-3">
-                        Rebuilding estate living around trust, security, and digital empowerment.
+                    <h2 class="display-4 fw-semibold mb-0">Our Mission</h2>
+                    <p class="fs-4 mb-2">
+                        Rebuilding estate living around trust, <br>security, and digital empowerment.
                     </p>
                     <p class="fs-5 opacity-75">
-                        Transparent pricing. Local support. Enterprise-grade infrastructure.
+                        Transparent pricing. Local support. <br>Enterprise-grade infrastructure.
                     </p>
                 </div>
 
@@ -1787,8 +1740,6 @@
         </div>
     </section>
 
-
-
     <!-- CTA Section - Screen 7 -->
     <section id="contact" class="py-5">
         <div class="container py-5">
@@ -1803,22 +1754,20 @@
 
                     <!-- Image under the text -->
                     <img src="assets/img/Proposal Cover page (15) 1.png" alt="Support Person" class="img-fluid mb-4"
-                        style="max-width:240px; height:auto;">
+                        style="max-width:500px; height:auto;">
 
                     <!-- Button row -->
-                    <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-right gap-4">
                         <button class="btn btn-primary btn-lg rounded-pill px-4 py-3">
                             <i class="fas fa-phone me-2"></i>
                             Talk to Our Team
                         </button>
                     </div>
                 </div>
-
                 <div class="col-lg-6 text-center">
-                    <img src="assets/img/Group.png" alt="Devices Mockup" class="devices-mockup img-fluid"
+                    <img src="assets/img/Group1.gif" alt="Devices Mockup" class="devices-mockup img-fluid"
                         style="height: 400px; width: 700px; object-fit: contain;">
                 </div>
-
             </div>
         </div>
     </section>
@@ -1826,28 +1775,30 @@
     <!-- Footer -->
     <footer class="footer py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="d-flex align-items-center mb-4">
-                        <a class="navbar-brand" href="#">
-                            <img src="assets/img/3606.png" alt="State360 Logo" class="d-inline-block align-text-top"
-                                style="height: 70px;">
-                        </a>
-                    </div>
-                    <div class="mb-3">
+            <div class="row align-items-center">
+                <!-- Logo Left -->
+                <div class="col-lg-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/img/3606.png" alt="State360 Logo" style="height:70px;">
+                    </a>
+                </div>
+
+                <!-- Contact / Phone / Social Right -->
+                <div class="col-lg-9 text-lg-end">
+                    <div class="mb-2">
                         <strong>Contact:</strong> support@estate360hub.com
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-2">
                         <strong>Phone:</strong> +234081234567
                     </div>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <div class="d-flex justify-content-lg-end gap-4 mt-4 mt-lg-0">
+                    <!--
+    <div class="footer-social mb-3">
+      <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+    </div>
+    -->
+                    <div class="d-flex justify-content-lg-end gap-3 flex-wrap">
                         <a href="#" class="text-white text-decoration-none">Terms</a>
                         <a href="#" class="text-white text-decoration-none">Privacy</a>
                         <a href="#" class="text-white text-decoration-none">LinkedIn</a>
@@ -1863,6 +1814,74 @@
         </div>
     </footer>
 
+    <!-- Datepicker Script -->
+    <script>
+        const monthYear = document.getElementById("monthYear");
+        const calendarDates = document.getElementById("calendarDates");
+        const selectedDate = document.getElementById("selectedDate");
+
+        let currentDate = new Date();
+        renderCalendar();
+
+        document.getElementById("prevMonth").addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById("nextMonth").addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        function renderCalendar() {
+            const month = currentDate.getMonth();
+            const year = currentDate.getFullYear();
+
+            // header text
+            monthYear.textContent = currentDate.toLocaleString("default", { month: "long" }) + " " + year;
+
+            // get first and last day
+            const firstDay = new Date(year, month, 1).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+            const prevLastDate = new Date(year, month, 0).getDate();
+
+            // build dates grid
+            let days = "";
+            // leading blanks (Monday start)
+            let blanks = (firstDay + 6) % 7;
+            for (let x = blanks; x > 0; x--) {
+                days += `<div class="inactive">${prevLastDate - x + 1}</div>`;
+            }
+
+            // actual days
+            for (let i = 1; i <= lastDate; i++) {
+                // mark demo days (example: every 7th day)
+                let demoClass = (i % 7 === 0) ? "demo-day" : "";
+                days += `<div class="${demoClass}" data-date="${i}">${i}</div>`;
+            }
+
+            // trailing blanks
+            const totalCells = blanks + lastDate;
+            const nextDays = 7 - (totalCells % 7);
+            if (nextDays < 7) {
+                for (let j = 1; j <= nextDays; j++) {
+                    days += `<div class="inactive">${j}</div>`;
+                }
+            }
+
+            calendarDates.innerHTML = days;
+
+            // attach click events
+            document.querySelectorAll("#calendarDates div[data-date]").forEach(d => {
+                d.addEventListener("click", () => {
+                    document.querySelectorAll("#calendarDates div").forEach(el => el.classList.remove("active"));
+                    d.classList.add("active");
+                    selectedDate.textContent = `${d.dataset.date} ${monthYear.textContent}`;
+                });
+            });
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         // Smooth scrolling
