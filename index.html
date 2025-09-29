@@ -938,12 +938,74 @@
         .estate-section.blue label {
             color: #fff;
         }
+
         /* smaller logo on mobile */
-@media (max-width: 767.98px) {
-  .navbar-brand img {
-    height: 40px !important; /* shrink on phones */
-  }
-}
+        @media (max-width: 767.98px) {
+            .navbar-brand img {
+                height: 40px !important;
+                /* shrink on phones */
+            }
+        }
+
+        .action-buttons-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+            padding: 30px 0;
+        }
+
+        .action-buttons-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .action-btn {
+            background: rgba(30, 58, 95, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px 30px;
+            color: #ffffff;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        .action-btn:hover {
+            background: rgba(30, 58, 95, 0.95);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .action-btn i {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .action-btn-text {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .action-buttons-container {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 20px;
+            }
+
+            .action-btn {
+                padding: 18px 25px;
+            }
+        }
+        
+        
     </style>
 </head>
 
@@ -952,13 +1014,9 @@
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-  <img src="assets/img/Logo.png"
-       alt="State360 Logo"
-       class="d-inline-block align-text-top img-fluid"
-       style="height: 70px;">
-</a>
-
-
+                <img src="assets/img/Logo.png" alt="State360 Logo" class="d-inline-block align-text-top img-fluid"
+                    style="height: 70px;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -993,7 +1051,7 @@
                 <!-- Left Column: Text + Buttons -->
                 <div class="col-lg-6">
                     <div class="mb-0">
-                        <small class="text-uppercase text-white-50">Estate 360</small>
+                        <small class="text-white">Estate 360</small>
                     </div>
                     <h1 class="hero-title mb-2 text-white">Smart. Secure.</h1>
                     <div class="seamless-outline mb-2">Seamless.</div>
@@ -1003,27 +1061,25 @@
                     </p>
 
                     <!-- Action Buttons -->
-                    <div class="d-flex justify-content-center mt-4 mb-5">
-                        <div class="action-buttons d-flex flex-column flex-md-row">
+                    <div class="action-buttons-wrapper">
+                        <div class="action-buttons-container">
 
                             <!-- Explore the Suite -->
-                            <button class="action-btn btn btn-primary flex-fill py-3 px-4 m-2" data-bs-toggle="modal"
-                                data-bs-target="#exploreSuiteModal">
-                                <i class="fas fa-compass d-block mb-2 fs-4"></i>
-                                Explore the Suite
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#exploreSuiteModal">
+                                <i class="fas fa-compass"></i>
+                                <div class="action-btn-text">Explore the Suite</div>
                             </button>
 
                             <!-- Request a Demo -->
-                            <button class="action-btn btn btn-primary flex-fill py-3 px-4 m-2" data-bs-toggle="modal"
-                                data-bs-target="#requestDemoModal">
-                                <i class="fas fa-file-alt d-block mb-2 fs-4"></i>
-                                Request a Demo
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#requestDemoModal">
+                                <i class="fas fa-file-alt"></i>
+                                <div class="action-btn-text">Request a Demo</div>
                             </button>
 
                             <!-- Watch 360s Overview -->
-                            <button class="action-btn btn btn-primary flex-fill py-3 px-4 m-2">
-                                <i class="fas fa-play d-block mb-2 fs-4"></i>
-                                Watch 360s Overview
+                            <button class="action-btn">
+                                <i class="fas fa-play"></i>
+                                <div class="action-btn-text">Watch 360s Overview</div>
                             </button>
                         </div>
                     </div>
@@ -1031,16 +1087,15 @@
 
                 <!-- Right Column: Phone Image -->
                 <div class="col-lg-6 text-center">
-                    <img src="assets/img/Group.png" alt="Estate360 Mobile App" class="img-fluid" style="
+                    <img src="assets/img/Patrol app (1).gif" alt="Estate360 Mobile App" class="img-fluid" style="
                         width: 500px;
                         height: 700px;
                         object-fit: contain;
                     ">
                 </div>
-
-
             </div>
         </div>
+
         <!-- Explore Suite Modal -->
         <div class="modal fade" id="exploreSuiteModal" tabindex="-1" aria-labelledby="exploreSuiteModalLabel"
             aria-hidden="true">
@@ -1065,7 +1120,7 @@
                                 <div class="estate-image left">
                                     <a href="#" style="display: inline-block; text-decoration: none;">
                                         <img src="assets/img/222.png" alt="Community App Interface" style="width: 120px; height: 250px; border-radius: 25px; 
-                            object-fit: cover;">
+                                         object-fit: cover;">
                                     </a>
                                 </div>
 
@@ -1393,7 +1448,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-4">
-                    <h2 class="display-4 fw-bold text-primary mb-3">Why<br>Estate360Hub?</h2>
+                    <h3 class="section-title display-5 fw-semibold mb-3">Why<br>Estate360Hub?</h3>
                     <h5 class="fw-semibold mb-3">Modern Estates Demand More Than Just Walls and Gates.</h5>
                     <p class="text-muted mb-4">We bring intelligence, automation, and security to your community</p>
                     <div class="col-lg-6 text-center bg-transparent">
@@ -1467,7 +1522,7 @@
     <section id="products" class="py-5">
         <div class="container py-5">
             <div class="text-lift mb-5">
-                <h2 class="section-title display-5 mb-3">The Estate360Hub Ecosystem</h2>
+                <h3 class="section-title display-5 mb-3 fw-semibold">The Estate360Hub Ecosystem</h3>
                 <p class="text-muted">Modular. Interconnected. Built for scale</p>
             </div>
 
@@ -1543,7 +1598,7 @@
         <div class="container py-0">
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold text-primary mb-4">One Login. Multiple Experiences.</h2>
+                    <h3 class="section-title display-5 fw-semibold mb-3">One Login. Multiple Experiences.</h3>
                     <p class="text-muted">Each product works independently — <br>but they're even more powerful
                         <br>together.
                     </p>
@@ -1577,8 +1632,8 @@
     <!-- Trusted Section - Screen 4 -->
     <section class="py-5">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="section-title display-5 fw-bold mb-3">Trusted by Forward-Thinking Estates & Cities</h2>
+            <div class="text-lift mb-5">
+                <h2 class="section-title display-5 fw-semibold mb-3">Trusted by Forward-Thinking Estates & Cities</h2>
                 <p class="text-muted">Marquee Carousel or Grid:</p>
             </div>
             <div class="row g-4 mb-5">
@@ -1609,7 +1664,7 @@
     <!-- Testimonials Section -->
     <section class="py-5 bg-light">
         <div class="container py-5">
-            <h2 class="section-title display-5 fw-bold mb-5">Real Voices, Real Impact</h2>
+            <h2 class="section-title display-5 fw-semibold mb-5">Real Voices, Real Impact</h2>
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="bg-white rounded-3 p-4">
@@ -1645,7 +1700,7 @@
     <section class="py-5">
         <div class="container py-5">
             <div class="text-lift mb-5">
-                <h2 class="display-5 fw-semibold text-primary">Built for Africa. Scaling Beyond</h2>
+                <h2 class="section-title display-5 fw-semibold mb-3">Built for Africa. Scaling Beyond</h2>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-3 col-md-4">
@@ -1690,7 +1745,7 @@
                 <!-- Text Left -->
                 <div class="col-lg-6">
                     <h2 class="display-4 fw-semibold mb-0">Our Mission</h2>
-                    <p class="fs-4 mb-2">
+                    <p class="fs-3 mb-2">
                         Rebuilding estate living around trust, <br>security, and digital empowerment.
                     </p>
                     <p class="fs-5 opacity-75">
@@ -1754,7 +1809,7 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h4 class="display-4 fw-bold text-primary mb-4">
+                    <h4 class="section-title display-5 fw-semibold mb-3">
                         Ready to Transform Your Estate?
                     </h4>
                     <p class="text-muted fs-5 mb-5">
