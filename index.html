@@ -36,7 +36,7 @@
         }
 
         .navbar-custom {
-            background: transparent !important;
+            background: blur !important;
             /* no background */
             backdrop-filter: none;
             /* remove blur if you don't want it */
@@ -210,6 +210,41 @@
             font-weight: 600;
         }
 
+        .product-card:hover {
+            transform: none;
+            /* disable hover transform */
+            box-shadow: none;
+            /* no shadow on hover */
+        }
+
+        .product-card .card-body {
+            position: relative;
+            padding: 1.5rem;
+        }
+
+        /* faded icon in bottom-right corner */
+        .product-card .card-icon {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            font-size: 150px;
+            color: rgba(0, 0, 0, 0.05);
+            /* faded watermark */
+            pointer-events: none;
+        }
+
+        .product-card {
+            width: 300px;
+            background-color: #f8f9fa;
+            /* light ash */
+            border: none;
+            /* remove border */
+            box-shadow: none;
+            /* remove shadow */
+            overflow: hidden;
+            /* clip icon */
+        }
+
         .product-features {
             list-style: none;
             padding: 0;
@@ -319,42 +354,6 @@
             background-position: center;
             position: relative;
         }
-
-        .product-card {
-            width: 300px;
-            background-color: #f8f9fa;
-            /* light ash */
-            border: none;
-            /* remove border */
-            box-shadow: none;
-            /* remove shadow */
-            overflow: hidden;
-            /* clip icon */
-        }
-
-        .product-card:hover {
-            transform: none;
-            /* disable hover transform */
-            box-shadow: none;
-            /* no shadow on hover */
-        }
-
-        .product-card .card-body {
-            position: relative;
-            padding: 1.5rem;
-        }
-
-        /* faded icon in bottom-right corner */
-        .product-card .card-icon {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            font-size: 140px;
-            color: rgba(0, 0, 0, 0.05);
-            /* faded watermark */
-            pointer-events: none;
-        }
-
 
         .devices-mockup::before {
             content: '';
@@ -1016,12 +1015,12 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-        <div class="container-fluid"> <!-- use container-fluid for edge-to-edge -->
+        <div class="container-fluid">
 
             <!-- Logo aligned left -->
-            <a class="navbar-brand me-auto" href="#" style="margin: left 5px;">
+            <a class="navbar-brand me-auto" href="#" style="margin: left 7px;">
                 <img src="assets/img/Logo.png" alt="State360 Logo" class="d-inline-block align-text-top img-fluid"
-                    style="height: 40px;">
+                    style="height: 50px;">
             </a>
 
             <!-- Navbar toggler -->
@@ -1880,7 +1879,6 @@
                     <h6 class="section-title display-5 fw-semibold mb-3" style="color: #336799;">
                         Ready to Transform Your Estate?
                     </h6>
-
                     <p class="text-muted fs-5 mb-5">
                         Power your estate, property, or organization with Africa's #1 smart estate platform.
                     </p>
@@ -1890,7 +1888,7 @@
                         style="max-width:500px; height:auto;">
 
                     <!-- Button row -->
-                    <div class="d-flex align-items-right gap-4">
+                    <div class="d-flex align-items-center gap-4">
                         <button class="btn btn-primary btn-lg rounded-pill px-4 py-3">
                             <i class="fas fa-phone me-2"></i>
                             Talk to Our Team
