@@ -20,11 +20,18 @@
         :root {
             --primary-blue: #4a90c2;
             --dark-blue: #2c5aa0;
-            --light-blue: #6bb6d6;
+            --accent-blue: #336799;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
 
         /* Custom Bootstrap overrides */
@@ -1009,6 +1016,32 @@
         .bg-336799 {
             background-color: #336799 !important;
         }
+
+        /* Add this to your CSS */
+        .hero-bg .mb-3 {
+            margin-top: 30px !important;
+            margin-bottom: 20px !important;
+        }
+
+        /* OR target it more specifically */
+        .hero-bg .text-uppercase,
+        .hero-bg small {
+            display: block;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* Mobile specific spacing */
+        @media (max-width: 767.98px) {
+            .hero-bg .mb-3 {
+                margin-top: 20px !important;
+            }
+
+            /* Add padding to the entire hero content area */
+            .hero-bg .col-lg-6 {
+                padding-top: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -1020,7 +1053,7 @@
             <!-- Logo aligned left -->
             <a class="navbar-brand me-auto" href="#" style="margin-left: 30px;">
                 <img src="assets/img/Logo.png" alt="State360 Logo" class="d-inline-block align-text-top img-fluid"
-                    style="height: 40px;">
+                    style="height: 50px;">
             </a>
 
             <!-- Navbar toggler -->
@@ -1047,16 +1080,16 @@
     </nav>
 
     <!-- Hero Section - Screen 1 -->
-    <section id="home" class="hero-bg d-flex align-items-center mt-sm-auto">
+    <section id="home" class="hero-bg d-flex align-items-center mb-6">
         <div class="container">
             <div class="row align-items-center">
 
                 <!-- Left Column: Text + Buttons -->
                 <div class="col-lg-6">
-                    <div class="mb-0">
-                        <span class="text-white" style="font-size: 0.7rem;">Estate 360</span>
+                    <div class="mb-0" style="margin-top: 40px;">
+                        <small class=" text-white" style="font-size: 0.7rem; letter-spacing: 1px;">Estate 360</small>
                     </div>
-                    <h4 class="hero-title mb-2 text-white">Smart. Secure.</h4>
+                    <h4 class="hero-title mb-0 text-white">Smart. Secure.</h4>
                     <div class="seamless-outline mb-2">Seamless.</div>
                     <p class="hero-description mb-2 p-3 rounded">
                         The all-in-one platform powering the future of estates from digital access to verified home
@@ -1686,7 +1719,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     </section>
 
     <!-- Trusted Section - Screen 4 -->
