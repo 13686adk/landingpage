@@ -1042,6 +1042,89 @@
                 padding-top: 20px;
             }
         }
+
+        /* 🔒 Prevent horizontal scrolling */
+        html,
+        body {
+            overflow-x: hidden !important;
+            width: 100%;
+        }
+
+        /* 🖼 Make all images and videos responsive */
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 🛠 Bootstrap row gutter fix */
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        /* 📱 Navbar responsive fix */
+        .navbar-custom {
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        .navbar-collapse {
+            text-align: center;
+        }
+
+        .navbar-collapse .nav-item {
+            margin: 0.5rem 0;
+        }
+
+        /* 🖥 Section padding adjustments */
+        section {
+            padding: 3rem 1rem;
+        }
+
+        /* 📱 Responsive typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            word-wrap: break-word;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* 💡 Mission + CTA section (stack nicely on phones) */
+        @media (max-width: 768px) {
+
+            .mission-section .col-lg-6,
+            .road-section .col-lg-3,
+            .cta-section .col-lg-6 {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .devices-mockup {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        /* 📱 Footer responsive fix */
+        .footer .col-lg-9 {
+            text-align: center;
+        }
+
+        .footer img {
+            margin: 0 auto;
+        }
     </style>
 </head>
 
@@ -1073,7 +1156,7 @@
                 <!-- Right section -->
                 <div class="d-flex align-items-center">
                     <i class="fas fa-search text-white me-3"></i>
-                    <button class="btn btn-get-started">Let's Get Started</button>
+                    <button class="btn-get-started">Let's Get Started</button>
                 </div>
             </div>
         </div>
@@ -1333,7 +1416,7 @@
                                     <div class="col-md-12">
                                         <div class="row g-4">
                                             <!-- App 1 -->
-                                            <div class="col-md-4 d-flex align-items-start">
+                                            <div class="col-12 col-md-4 d-flex align-items-start">
                                                 <img src="assets/img/Group.png" alt="Community"
                                                     style="max-width:150px; margin-right:4px;">
                                                 <div style="margin-top:2px;">
@@ -1346,7 +1429,7 @@
                                             </div>
 
                                             <!-- App 2 -->
-                                            <div class="col-md-4 d-flex align-items-start">
+                                            <div class="col-12 col-md-4 d-flex align-items-start">
                                                 <img src="assets/img/Group.png" alt="Developer"
                                                     style="max-width:150px; margin-right:4px;">
                                                 <div style="margin-top:2px;">
@@ -1359,7 +1442,7 @@
                                             </div>
 
                                             <!-- App 3 -->
-                                            <div class="col-md-4 d-flex align-items-start">
+                                            <div class="col-12 col-md-4 d-flex align-items-start">
                                                 <img src="assets/img/Group.png" alt="Organization"
                                                     style="max-width:150px; margin-right:4px;">
                                                 <div style="margin-top:2px;">
@@ -1373,7 +1456,7 @@
                                             </div>
 
                                             <!-- App 4 -->
-                                            <div class="col-md-4 d-flex align-items-start">
+                                            <div class="col-12 col-md-4 d-flex align-items-start">
                                                 <img src="assets/img/Group.png" alt="Homes"
                                                     style="max-width:150px; margin-right:4px;">
                                                 <div style="margin-top:2px;">
@@ -1386,11 +1469,18 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Construction Image (responsive) -->
+                                <div class="d-block d-md-none text-center mt-3">
+                                    <!-- Shown on small screens (inside flow) -->
+                                    <img src="assets/img/Proposal Cover page (7).png" alt="Construction"
+                                        style="height:190px; width:auto; opacity:0.9;">
+                                </div>
                             </div>
 
-                            <!-- Construction Image floating at right edge -->
-                            <img src="assets/img/Proposal Cover page (7).png" class="position-absolute"
-                                alt="Construction"
+                            <!-- Shown only on large screens (absolute at right edge) -->
+                            <img src="assets/img/Proposal Cover page (7).png"
+                                class="d-none d-md-block position-absolute" alt="Construction"
                                 style="height:190px; width:auto; right:15px; bottom:15px; opacity:0.9;">
                         </div>
 
@@ -1432,7 +1522,7 @@
                                         <form>
                                             <div class="row">
                                                 <!-- Organisation Name -->
-                                                <div class="col-md-12 mb-3">
+                                                <div class="col-md-12 mb-1">
                                                     <label for="orgName" class="form-label fw-semibold">Organisation
                                                         Name</label>
                                                     <input type="text" id="orgName" class="form-control"
@@ -1440,7 +1530,7 @@
                                                 </div>
 
                                                 <!-- Registration Name -->
-                                                <div class="col-md-12 mb-3">
+                                                <div class="col-md-12 mb-1">
                                                     <label for="regName" class="form-label fw-semibold">Registration
                                                         Name</label>
                                                     <input type="text" id="regName" class="form-control"
@@ -1448,7 +1538,7 @@
                                                 </div>
 
                                                 <!-- Organisation Email -->
-                                                <div class="col-md-12 mb-3">
+                                                <div class="col-md-12 mb-1">
                                                     <label for="orgEmail" class="form-label fw-semibold">Organisation
                                                         Email</label>
                                                     <input type="email" id="orgEmail" class="form-control"
@@ -1456,7 +1546,7 @@
                                                 </div>
 
                                                 <!-- Organisation Phone Number -->
-                                                <div class="col-md-12 mb-3">
+                                                <div class="col-md-12 mb-2">
                                                     <label for="orgPhone" class="form-label fw-semibold">Organisation
                                                         Phone
                                                         Number</label>
@@ -1638,7 +1728,6 @@
             </div>
         </div>
     </section>
-
     <!-- One Login Section -->
     <section class="py-0 bg-light">
         <div class="container py-0">
@@ -1652,72 +1741,70 @@
                         <br>together.
                     </p>
                 </div>
-                <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                    <div class="position-relative" style="width: 400px; height: 450px;">
+                <div class="position-relative mx-auto d-flex justify-content-center align-items-center"
+                    style="width: 400px; height: 450px;">
 
-                        <!-- Center: Phone Image (at the back) -->
-                        <div class="position-absolute top-50 start-50 translate-middle" style="z-index: 1;">
-                            <img src="assets/img/Group.png" alt="Estate360 Mobile App"
-                                style="height: 400px; width: auto;">
-                        </div>
+                    <!-- Phone Image -->
+                    <img src="assets/img/Group.png" alt="Estate360 Mobile App"
+                        style="width: 350px; height: auto; max-width: 100%;">
 
-                        <!-- Top Row: Community and Developer -->
-                        <div class="position-absolute start-50 translate-middle-x"
-                            style="width: 100%; top: 20%; z-index: 2;">
-                            <div class="row g-2 mx-2">
-                                <div class="col-6">
-                                    <div class="bg-336799 text-white rounded-3 p-3 text-center">
-                                        <h6 class="mb-0 small">Community</h6>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="bg-336799 text-white rounded-3 p-3 text-center">
-                                        <h6 class="mb-0 small">Developer</h6>
-                                    </div>
+                    <!-- Top Row -->
+                    <div class="position-absolute start-50 translate-middle-x"
+                        style="width: 100%; top: 20%; z-index: 2;">
+                        <div class="row g-2 mx-2 justify-content-center">
+                            <div class="col-6">
+                                <div class="bg-336799 text-white rounded-3 p-3 text-center">
+                                    <h6 class="mb-0 small">Community</h6>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Middle White Card -->
-                        <div class="position-absolute start-50 translate-middle-x"
-                            style="width: 90%; top: 50%; z-index: 2;">
-                            <div class="bg-white rounded-3 shadow-sm p-2">
-                                <div class="d-flex justify-content-around align-items-center text-center"
-                                    style="font-size: 0.7rem;">
-                                    <div>
-                                        <i class="fas fa-database text-warning me-1" style="font-size: 0.8rem;"></i>
-                                        <span>Shared database</span>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-shield-alt text-warning me-1" style="font-size: 0.8rem;"></i>
-                                        <span>Unified security</span>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-mobile-alt text-dark me-1" style="font-size: 0.8rem;"></i>
-                                        <span>Seamless mobile UX</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Row: Organization and Homes -->
-                        <div class="position-absolute start-50 translate-middle-x"
-                            style="width: 100%; top: 75%; z-index: 2;">
-                            <div class="row g-2 mx-2">
-                                <div class="col-9">
-                                    <div class="bg-336799 text-white rounded-3 p-3 text-center">
-                                        <h6 class="mb-0 small">Organization</h6>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="bg-336799 text-white rounded-3 p-3 text-center">
-                                        <h6 class="mb-0 small">Homes</h6>
-                                    </div>
+                            <div class="col-6">
+                                <div class="bg-336799 text-white rounded-3 p-3 text-center">
+                                    <h6 class="mb-0 small">Developer</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Middle White Card -->
+                    <div class="position-absolute start-50 translate-middle-x"
+                        style="width: 90%; top: 50%; z-index: 2;">
+                        <div class="bg-white rounded-3 shadow-sm p-2 text-center">
+                            <div class="d-flex justify-content-around align-items-center" style="font-size: 0.75rem;">
+                                <div>
+                                    <i class="fas fa-database text-warning me-1" style="font-size: 0.9rem;"></i>
+                                    <span>Shared database</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-shield-alt text-warning me-1" style="font-size: 0.9rem;"></i>
+                                    <span>Unified security</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-mobile-alt text-dark me-1" style="font-size: 0.9rem;"></i>
+                                    <span>Seamless mobile UX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Row -->
+                    <div class="position-absolute start-50 translate-middle-x"
+                        style="width: 100%; top: 75%; z-index: 2;">
+                        <div class="row g-2 mx-2 justify-content-center">
+                            <div class="col-9">
+                                <div class="bg-336799 text-white rounded-3 p-3 text-center">
+                                    <h6 class="mb-0 small">Organization</h6>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="bg-336799 text-white rounded-3 p-3 text-center">
+                                    <h6 class="mb-0 small">Homes</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     </section>
@@ -1931,7 +2018,7 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <img src="assets/img/hosesss.png" alt="Devices Mockup" class="devices-mockup img-fluid"
-                        style="height: 400px; width: 700px; object-fit: contain;">
+                        style="height: 450px; width: 700px; object-fit: contain;">
                 </div>
             </div>
         </div>
@@ -1987,6 +2074,8 @@
         const selectedDate = document.getElementById("selectedDate");
 
         let currentDate = new Date();
+        let selectedDates = []; // store multiple selected dates
+
         renderCalendar();
 
         document.getElementById("prevMonth").addEventListener("click", () => {
@@ -2013,20 +2102,16 @@
 
             // build dates grid
             let days = "";
-            // leading blanks (Monday start)
             let blanks = (firstDay + 6) % 7;
             for (let x = blanks; x > 0; x--) {
                 days += `<div class="inactive">${prevLastDate - x + 1}</div>`;
             }
 
-            // actual days
             for (let i = 1; i <= lastDate; i++) {
-                // mark demo days (example: every 7th day)
-                let demoClass = (i % 7 === 0) ? "demo-day" : "";
-                days += `<div class="${demoClass}" data-date="${i}">${i}</div>`;
+                let isSelected = selectedDates.includes(`${i}-${month}-${year}`) ? "active" : "";
+                days += `<div class="${isSelected}" data-date="${i}" data-month="${month}" data-year="${year}">${i}</div>`;
             }
 
-            // trailing blanks
             const totalCells = blanks + lastDate;
             const nextDays = 7 - (totalCells % 7);
             if (nextDays < 7) {
@@ -2037,17 +2122,29 @@
 
             calendarDates.innerHTML = days;
 
-            // attach click events
+            // attach click events for multi-select
             document.querySelectorAll("#calendarDates div[data-date]").forEach(d => {
                 d.addEventListener("click", () => {
-                    document.querySelectorAll("#calendarDates div").forEach(el => el.classList.remove("active"));
-                    d.classList.add("active");
-                    selectedDate.textContent = `${d.dataset.date} ${monthYear.textContent}`;
+                    const key = `${d.dataset.date}-${d.dataset.month}-${d.dataset.year}`;
+                    if (selectedDates.includes(key)) {
+                        // unselect if already selected
+                        selectedDates = selectedDates.filter(k => k !== key);
+                        d.classList.remove("active");
+                    } else {
+                        // add new selection
+                        selectedDates.push(key);
+                        d.classList.add("active");
+                    }
+
+                    // display all selected
+                    selectedDate.textContent = selectedDates.length > 0
+                        ? selectedDates.join(", ")
+                        : "None";
                 });
             });
         }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         // Smooth scrolling
